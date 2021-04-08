@@ -171,11 +171,11 @@
 			$subject = $_POST['objet'];
 			$message = $_POST['message'];
 			
-			$headers = 'De: webmaster@example.com' . "\r\n" .
-            'Reponse à: webmaster@example.com' . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();
+			$headers = 'De: webmaster@example.com' . "\r\n" ;
+            $headers .='From: webmaster@example.com' . "\r\n"; 
+            $headers .='X-Mailer: PHP/' . phpversion();
 
-            $texte_du_mail= "De:".$destinataire.": \n".$nom." ".$prenom." vous a envoyé un message suivant: \n"+$message;
+            $texte_du_mail= "De:".$destinataire.": \n".$nom." ".$prenom." vous a envoyé un message suivant: \n".$message;
 
             mail($to, $subject, $texte_du_mail, $headers);
 
